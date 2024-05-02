@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxpbxoxs0dcve"]
+
+[ext_resource type="Script" path="res://Scenes/Duck.gd" id="1_12g2j"]
+[ext_resource type="PackedScene" uid="uid://dn6juje78e3nn" path="res://Assets/Room2/rubber_duck.glb" id="1_l2udt"]
+
+[sub_resource type="Animation" id="Animation_8idm7"]
+resource_name = "Idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DuckModel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.2, 1.5, 1.8, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 0), Vector3(0, 4.71239, 0), Vector3(0, -4.71239, 0), Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DuckModel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.2, 1.5, 1.8, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hxps5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DuckModel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DuckModel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3e05n"]
+_data = {
+"Idle": SubResource("Animation_8idm7"),
+"RESET": SubResource("Animation_hxps5")
+}
+
+[node name="Duck" type="Node3D"]
+script = ExtResource("1_12g2j")
+material_res = Array[String](["res://Assets/Room2/material/Red.tres", "res://Assets/Room2/material/Orange.tres", "res://Assets/Room2/material/Yellow.tres", "res://Assets/Room2/material/Green.tres", "res://Assets/Room2/material/Blue.tres", "res://Assets/Room2/material/Purple.tres", "res://Assets/Room2/material/Pink.tres", "res://Assets/Room2/material/Brown.tres", "res://Assets/Room2/material/Gray.tres", "res://Assets/Room2/material/Black.tres", "res://Assets/Room2/material/White.tres"])
+
+[node name="DuckModel" parent="." instance=ExtResource("1_l2udt")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3e05n")
+}
+
+[editable path="DuckModel"]

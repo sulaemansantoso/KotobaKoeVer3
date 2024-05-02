@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cgsn7vdlibgu6"]
+[gd_scene load_steps=33 format=3 uid="uid://cgsn7vdlibgu6"]
 
 [ext_resource type="Script" path="res://Scenes/color_room.gd" id="2_6g36c"]
 [ext_resource type="Texture2D" uid="uid://c6k7evmpchqn7" path="res://Assets/Room1/tatami.jpg" id="2_ru5l6"]
@@ -18,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://dpinrtnbbb7y4" path="res://Assets/Room2/audio/white.wav" id="17_mhiyv"]
 [ext_resource type="AudioStream" uid="uid://cky17fylmep0n" path="res://Assets/Room1/Audio/12.wav" id="18_1qwl8"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="19_k0wk8"]
-[ext_resource type="PackedScene" uid="uid://coa1l25uwv1mf" path="res://Scenes/SoalNUmber.tscn" id="20_xdlwx"]
+[ext_resource type="PackedScene" uid="uid://dxpbxoxs0dcve" path="res://Scenes/Duck.tscn" id="22_g0yvr"]
 [ext_resource type="PackedScene" uid="uid://c1l6ks6oe4yw1" path="res://Scenes/InformationPanel.tscn" id="22_qdymn"]
 [ext_resource type="AudioStream" uid="uid://c4bcmnw8dtcev" path="res://Assets/Room1/Audio/confirmation_001.ogg" id="26_3icvk"]
 [ext_resource type="AudioStream" uid="uid://bw1blhkglqmw8" path="res://Assets/Room1/Audio/error_001.ogg" id="27_nt0r6"]
@@ -47,55 +47,16 @@ albedo_texture = ExtResource("5_pwmch")
 material = SubResource("StandardMaterial3D_30pt4")
 size = Vector2(4, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yit0u"]
-vertex_color_use_as_albedo = true
-
 [sub_resource type="Animation" id="Animation_dv78g"]
 resource_name = "Benar"
 length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LabelViewport:material:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.054902, 0.105882, 0.113725, 1), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_y1faq"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LabelViewport:material:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_i6fev"]
 resource_name = "Salah"
 length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LabelViewport:material:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_03xdc"]
 _data = {
@@ -199,22 +160,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 1, 1.5, 
 transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 2, 1.5, 0.182)
 
 [node name="7" parent="TypingBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, -3, 2.5, 0.182)
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, -2.46342, 2.5, 0.182)
 
 [node name="8" parent="TypingBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, -2, 2.5, 0.182)
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, -1.46342, 2.5, 0.182)
 
 [node name="9" parent="TypingBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, -1, 2.5, 0.182)
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, -0.463423, 2.5, 0.182)
 
 [node name="10" parent="TypingBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0, 2.5, 0.182)
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 0.536577, 2.5, 0.182)
 
 [node name="11" parent="TypingBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 1, 2.5, 0.182)
-
-[node name="12" parent="TypingBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 2, 2.5, 0.182)
+transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, -1.49012e-08, 1, 1.53658, 2.5, 0.182)
 
 [node name="Audios" type="Node3D" parent="."]
 
@@ -254,13 +212,6 @@ stream = ExtResource("17_mhiyv")
 [node name="12" type="AudioStreamPlayer" parent="Audios"]
 stream = ExtResource("18_1qwl8")
 
-[node name="LabelViewport" parent="." instance=ExtResource("19_k0wk8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35897, -3.52886)
-screen_size = Vector2(8, 3)
-scene = ExtResource("20_xdlwx")
-viewport_size = Vector2(600, 300)
-material = SubResource("StandardMaterial3D_yit0u")
-
 [node name="SoalAnimPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_03xdc")
@@ -277,5 +228,17 @@ transform = Transform3D(0.198239, 0, -0.980154, 0, 1, 0, 0.980154, 0, 0.198239, 
 scene = ExtResource("22_qdymn")
 viewport_size = Vector2(500, 500)
 transparent = 0
+
+[node name="model_position" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.77207)
+
+[node name="Duck" parent="model_position" instance=ExtResource("22_g0yvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53492, 0, 0)
+
+[node name="Duck2" parent="model_position" instance=ExtResource("22_g0yvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.659476, 0, 0)
+
+[node name="Duck3" parent="model_position" instance=ExtResource("22_g0yvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4033, 0, 0)
 
 [connection signal="button_pressed" from="TypingBoard/ButtonGuess" to="." method="_on_button_guess_button_pressed"]

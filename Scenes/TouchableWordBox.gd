@@ -20,10 +20,12 @@ func _ready():
 
 func change_idx(id) :
 	idx = id
-	
+	selected_value = value[idx]["Japanese"]
 	$StaticBody3D/Mesh/Label3D.text = selected_value
-	var mesh_panel : Sprite3D= $StaticBody3D/Mesh/Sprite3D
-	mesh_panel.get_active_material(0).albedo_color = Color(value[idx]["English"])
+	var mesh_panel : Sprite3D= $"StaticBody3D/Mesh/Flashing Layer"
+	#mesh_panel.get_active_material(0).albedo_color = Color(value[idx]["English"])
+	$StaticBody3D/Mesh/BackgroundSprite.modulate = Color(value[idx]["English"])
+
 	pass
 
 
