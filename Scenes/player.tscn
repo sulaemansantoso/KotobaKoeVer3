@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2pwic1ocbbpc"]
+
+[ext_resource type="Script" path="res://Script/player.gd" id="1_0nucg"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_chnau"]
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_jy0eb"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="3_4qbdo"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_7ofhb"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_fv32k"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="5_vpiwe"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="6_ldtvy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcmi7"]
+albedo_color = Color(0.403922, 0.690196, 0.0196078, 1)
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_0nucg")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("2_chnau")]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" instance=ExtResource("3_4qbdo")]
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/LeftHand" instance=ExtResource("2_jy0eb")]
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" instance=ExtResource("5_vpiwe")]
+
+[node name="MovementTurn" parent="XROrigin3D/LeftHand" instance=ExtResource("6_ldtvy")]
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("3_7ofhb")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" instance=ExtResource("3_fv32k")]
+laser_length = 1
+laser_material = SubResource("StandardMaterial3D_rcmi7")
+show_target = true
+collision_mask = 5242999
+
+[node name="SpotLight3D" type="SpotLight3D" parent="XROrigin3D/RightHand"]
+spot_angle = 16.6872
+
+[connection signal="pointing_event" from="XROrigin3D/RightHand/FunctionPointer" to="." method="_on_function_pointer_pointing_event"]

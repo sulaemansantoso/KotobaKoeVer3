@@ -1,0 +1,22 @@
+extends Node3D
+
+var json_value
+
+func _ready():
+	#load info from json file into an array of object
+	var file =  FileAccess.open("res://Scenes/color_room.gd",FileAccess.READ)
+	
+	var json_string = file.get_as_text()
+	json_value = JSON.parse_string(json_string)
+	for board in $LearningBoard.get_children():
+		print(board)
+		board.attach_resource(json_value)
+		pass
+	
+
+func reset_learning_board() :
+
+	pass
+
+func reset_typing_board() :
+	pass

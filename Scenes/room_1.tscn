@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw0eg6ie2hmds"]
+
+[ext_resource type="PackedScene" uid="uid://c2pwic1ocbbpc" path="res://Scenes/player.tscn" id="1_agfx3"]
+[ext_resource type="Script" path="res://Scenes/roomScript.gd" id="1_st7he"]
+[ext_resource type="PackedScene" uid="uid://cyunxclwnej5y" path="res://Scenes/number_room.tscn" id="2_uajx2"]
+
+[sub_resource type="Sky" id="Sky_f8ak1"]
+
+[sub_resource type="Environment" id="Environment_nho7v"]
+background_mode = 2
+sky = SubResource("Sky_f8ak1")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.0
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.1224
+
+[node name="RoomSetting" type="Node3D"]
+script = ExtResource("1_st7he")
+
+[node name="player" parent="." instance=ExtResource("1_agfx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.32774)
+
+[node name="number_room" parent="." instance=ExtResource("2_uajx2")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nho7v")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.94517, 0)
+light_energy = 3.783
+omni_range = 45.7821

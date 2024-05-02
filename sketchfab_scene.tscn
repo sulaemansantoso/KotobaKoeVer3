@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds5xhacxvy1o0"]
+
+[ext_resource type="PackedScene" uid="uid://bjwf7q2vvenpm" path="res://Assets/Room1/japanese_garden.glb" id="1_pdwmv"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_pdwmv")]
+
+[node name="export_obj_cleaner_materialmerger_gles" parent="Sketchfab_model" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.901, 41.9388, -9.31228e-15)

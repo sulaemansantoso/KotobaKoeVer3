@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4gq8f5epjp14"]
+
+[ext_resource type="Script" path="res://tapable_button.gd" id="1_8sdhu"]
+[ext_resource type="Script" path="res://StaticBody3D.gd" id="1_luwhm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3igaa"]
+size = Vector3(1.8941, 1.83594, 0.363159)
+
+[sub_resource type="Gradient" id="Gradient_xj355"]
+offsets = PackedFloat32Array(0.00657895, 1)
+colors = PackedColorArray(0.424931, 0.424931, 0.424931, 1, 0.440336, 0.440336, 0.440336, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_makg2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qs1fj"]
+width = 200
+height = 200
+color_ramp = SubResource("Gradient_xj355")
+noise = SubResource("FastNoiseLite_makg2")
+
+[sub_resource type="SystemFont" id="SystemFont_dwrwy"]
+
+[node name="TapableButton" type="Node3D"]
+script = ExtResource("1_8sdhu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 1048577
+script = ExtResource("1_luwhm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0198669, 0.046875, 0.0375366)
+shape = SubResource("BoxShape3D_3igaa")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = SubResource("NoiseTexture2D_qs1fj")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00138605)
+text = "Label3D
+"
+font = SubResource("SystemFont_dwrwy")
+font_size = 100
+
+[connection signal="pointer_event" from="StaticBody3D" to="." method="_on_static_body_3d_pointer_event"]
