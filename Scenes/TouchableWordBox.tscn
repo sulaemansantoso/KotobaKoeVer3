@@ -1,13 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4eoq7cgv8c35"]
+[gd_scene load_steps=12 format=3 uid="uid://c4eoq7cgv8c35"]
 
 [ext_resource type="Script" path="res://Scenes/TouchBoxInteractable.gd" id="2_c8kke"]
 [ext_resource type="Script" path="res://Scenes/TouchableWordBox.gd" id="2_vjrp7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7v52u"]
-albedo_color = Color(0.492237, 0.492237, 0.492237, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmbfq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_aaqo8"]
-material = SubResource("StandardMaterial3D_7v52u")
+material = SubResource("StandardMaterial3D_hmbfq")
 size = Vector3(0.9, 0.9, 0.02)
 
 [sub_resource type="Gradient" id="Gradient_dw86y"]
@@ -18,6 +17,14 @@ width = 200
 height = 200
 fill = 2
 fill_from = Vector2(0.501424, 0.51567)
+
+[sub_resource type="Gradient" id="Gradient_rbdm0"]
+colors = PackedColorArray(0.791999, 0.791999, 0.791999, 1, 0.680321, 0.680321, 0.680321, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7ont"]
+gradient = SubResource("Gradient_rbdm0")
+width = 86
+height = 86
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_di5cc"]
 size = Vector3(1, 1, 0.0789185)
@@ -52,14 +59,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("StaticBody3D/Mesh:mesh:material:albedo_color")
+tracks/2/path = NodePath("StaticBody3D/Mesh/Flashing Layer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"transitions": PackedFloat32Array(1, 1, 1.03526),
 "update": 0,
-"values": [Color(0.492237, 0.492237, 0.492237, 1), Color(0.0142752, 0.0142752, 0.0142752, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l8h32"]
@@ -88,8 +95,17 @@ hframes = 3
 vframes = 4
 frame = 6
 
+[node name="BackgroundSprite" type="Sprite3D" parent="StaticBody3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0154983)
+texture = SubResource("GradientTexture2D_l7ont")
+
+[node name="Flashing Layer" type="Sprite3D" parent="StaticBody3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0169595)
+modulate = Color(1, 1, 1, 0)
+texture = SubResource("GradientTexture2D_l7ont")
+
 [node name="Label3D" type="Label3D" parent="StaticBody3D/Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0398586)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0285934)
 text = "text"
 font_size = 80
 

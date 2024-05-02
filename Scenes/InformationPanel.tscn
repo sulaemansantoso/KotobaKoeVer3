@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1l6ks6oe4yw1"]
+
+[ext_resource type="Script" path="res://Scenes/InformationPanel.gd" id="1_8fdyb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vjtc"]
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_pwgc8"]
+line_spacing = 0.0
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8fdyb")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainInfo" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -11.5
+offset_right = 68.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "<select tile >"
+label_settings = SubResource("LabelSettings_5vjtc")
+
+[node name="SecondaryInfo" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -75.0
+offset_right = 70.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "<more info here>"
+label_settings = SubResource("LabelSettings_pwgc8")
