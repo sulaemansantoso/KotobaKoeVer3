@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://cgsn7vdlibgu6"]
+[gd_scene load_steps=34 format=3 uid="uid://cgsn7vdlibgu6"]
 
 [ext_resource type="Script" path="res://Scenes/color_room.gd" id="2_6g36c"]
 [ext_resource type="Texture2D" uid="uid://c6k7evmpchqn7" path="res://Assets/Room1/tatami.jpg" id="2_ru5l6"]
+[ext_resource type="Texture2D" uid="uid://rjdmvqp4oaoi" path="res://Assets/Room2/woodtexture.jpg" id="3_hn8ni"]
 [ext_resource type="Texture2D" uid="uid://udr6f62yy42j" path="res://Assets/Room1/training panel sign.png" id="5_pwmch"]
 [ext_resource type="PackedScene" uid="uid://c4eoq7cgv8c35" path="res://Scenes/TouchableWordBox.tscn" id="5_tp8qe"]
 [ext_resource type="PackedScene" uid="uid://d4gq8f5epjp14" path="res://tapable_button.tscn" id="6_t21d0"]
@@ -27,7 +28,7 @@
 albedo_texture = ExtResource("2_ru5l6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ct6j"]
-albedo_texture = ExtResource("2_ru5l6")
+albedo_texture = ExtResource("3_hn8ni")
 uv2_scale = Vector3(2, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_10m6w"]
@@ -67,6 +68,7 @@ _data = {
 
 [node name="Color Room" type="Node3D"]
 script = ExtResource("2_6g36c")
+level = 2
 json_file = "res://Assets/Room2/colors.json"
 
 [node name="Static" type="Node3D" parent="."]

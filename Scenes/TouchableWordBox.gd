@@ -7,6 +7,8 @@ var word_list : Array
 @export
 var value : Array
 
+var hide_color: bool = false
+
 @export 
 var idx :int
 
@@ -25,9 +27,11 @@ func change_idx(id) :
 	var mesh_panel : Sprite3D= $"StaticBody3D/Mesh/Flashing Layer"
 	#mesh_panel.get_active_material(0).albedo_color = Color(value[idx]["English"])
 	$StaticBody3D/Mesh/BackgroundSprite.modulate = Color(value[idx]["English"])
-
 	pass
 
+func hide_button_color(shouldHide):
+	$StaticBody3D/Mesh/BackgroundSprite.visible = !shouldHide
+	pass
 
 func pasang_resource(res):
 	value=  res
