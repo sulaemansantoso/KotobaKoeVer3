@@ -19,6 +19,7 @@ color_ramp = SubResource("Gradient_xj355")
 noise = SubResource("FastNoiseLite_makg2")
 
 [sub_resource type="SystemFont" id="SystemFont_dwrwy"]
+subpixel_positioning = 0
 
 [node name="TapableButton" type="Node3D"]
 script = ExtResource("1_8sdhu")

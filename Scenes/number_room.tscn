@@ -134,6 +134,7 @@ _data = {
 
 [node name="Number Room" type="Node3D"]
 script = ExtResource("1_0w7qx")
+isAdvance = true
 
 [node name="Static" type="Node3D" parent="."]
 
@@ -389,10 +390,10 @@ stream = ExtResource("14_g6qhl")
 stream = ExtResource("15_isrbg")
 
 [node name="11" type="AudioStreamPlayer" parent="Audios"]
-stream = ExtResource("16_eenoi")
+stream = ExtResource("17_fe3lk")
 
 [node name="12" type="AudioStreamPlayer" parent="Audios"]
-stream = ExtResource("17_fe3lk")
+stream = ExtResource("16_eenoi")
 
 [node name="LabelViewport" parent="." instance=ExtResource("15_atepu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35897, -3.52886)

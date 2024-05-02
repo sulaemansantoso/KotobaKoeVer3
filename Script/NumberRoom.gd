@@ -3,7 +3,7 @@ extends Node3D
 signal bilang_pindah_level
 
 @export
-var isAdvance :bool = false
+var isAdvance :bool 
 
 @onready
 var roman = get_node("Roman");
