@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cgsn7vdlibgu6"]
+[gd_scene load_steps=36 format=3 uid="uid://cgsn7vdlibgu6"]
 
 [ext_resource type="Script" path="res://Scenes/color_room.gd" id="2_6g36c"]
 [ext_resource type="Texture2D" uid="uid://c6k7evmpchqn7" path="res://Assets/Room1/tatami.jpg" id="2_ru5l6"]
@@ -27,14 +27,10 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyt5i"]
 albedo_texture = ExtResource("2_ru5l6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ct6j"]
-albedo_texture = ExtResource("3_hn8ni")
-uv2_scale = Vector3(2, 2, 2)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4e3tv"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_10m6w"]
-lightmap_size_hint = Vector2i(504, 258)
-material = SubResource("StandardMaterial3D_4ct6j")
-flip_faces = true
+[sub_resource type="BoxMesh" id="BoxMesh_jebxl"]
+material = SubResource("StandardMaterial3D_4e3tv")
 size = Vector3(50, 0.2, 50)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0yggx"]
@@ -66,16 +62,23 @@ _data = {
 "Salah": SubResource("Animation_i6fev")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltm7e"]
+albedo_texture = ExtResource("3_hn8ni")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ax7ra"]
+material = SubResource("StandardMaterial3D_ltm7e")
+
 [node name="Color Room" type="Node3D"]
 script = ExtResource("2_6g36c")
-level = 2
+level = 1
 json_file = "res://Assets/Room2/colors.json"
 
 [node name="Static" type="Node3D" parent="."]
 
 [node name="Floor" type="MeshInstance3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16879, 0)
 material_override = SubResource("StandardMaterial3D_kyt5i")
-mesh = SubResource("BoxMesh_10m6w")
+mesh = SubResource("BoxMesh_jebxl")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Static/Floor"]
@@ -242,5 +245,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.659476, 0, 0)
 
 [node name="Duck3" parent="model_position" instance=ExtResource("22_g0yvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4033, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49356, 2.45276)
+mesh = SubResource("BoxMesh_ax7ra")
 
 [connection signal="button_pressed" from="TypingBoard/ButtonGuess" to="." method="_on_button_guess_button_pressed"]

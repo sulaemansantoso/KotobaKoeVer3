@@ -1,0 +1,66 @@
+[
+	{
+		"English": "Left",
+		"Japanese": "左",
+		"Furigana": "(ひだり)",
+		"Romaji": "Hidari",
+		"Katakana": "レフト",
+		"color":"0xff0000"
+	},
+	{
+		"English": "Right",
+		"Japanese": "右",
+		"Furigana": "",
+		"Romaji": "Migi",
+		"Katakana": "",
+		"color": "0xff8800"
+	},
+	{
+		"English": "Up",
+		"Japanese": "上",
+		"Furigana": "",
+		"Romaji": "Ue",
+		"Katakana": "",
+		"color":"0xffff00"
+	},
+	{
+		"English": "Down",
+		"Japanese": "下",
+		"Furigana": "",
+		"Romaji": "Shita",
+		"Katakana": "",
+		"color":"0x00ff00"
+	},
+	{
+		"English": "North",
+		"Japanese": "北",
+		"Furigana": "",
+		"Romaji": "Kita",
+		"Katakana": "",
+		"color":"0x0000ff"
+	},
+	{
+		"English": "South",
+		"Japanese": "南",
+		"Furigana": "",
+		"Romaji": "Minami",
+		"Katakana": "",
+		"color":"0xff00ff"
+	},
+	{
+		"English": "West",
+		"Japanese": "西",
+		"Furigana": "",
+		"Romaji": "Nishi",
+		"Katakana": "",
+		"color":"0xffaaaa"
+	},
+	{
+		"English": "East",
+		"Japanese": "東",
+		"Furigana": "",
+		"Romaji": "Azuma",
+		"Katakana": "",
+		"color":"0x774342"
+	},
+]

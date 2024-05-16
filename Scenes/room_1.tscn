@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw0eg6ie2hmds"]
+[gd_scene load_steps=9 format=3 uid="uid://bw0eg6ie2hmds"]
 
 [ext_resource type="PackedScene" uid="uid://c2pwic1ocbbpc" path="res://Scenes/player.tscn" id="1_agfx3"]
 [ext_resource type="Script" path="res://Scenes/roomScript.gd" id="1_st7he"]
 [ext_resource type="PackedScene" uid="uid://cyunxclwnej5y" path="res://Scenes/number_room.tscn" id="2_uajx2"]
 [ext_resource type="PackedScene" uid="uid://cgsn7vdlibgu6" path="res://Scenes/color_room.tscn" id="4_1xvq1"]
+[ext_resource type="PackedScene" uid="uid://bxuaq2l2oy8r7" path="res://Scenes/direction_room.tscn" id="5_h6afb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_djm1u"]
 sky_top_color = Color(0.815686, 0.376471, 0.141176, 1)
@@ -40,3 +41,7 @@ light_energy = 3.783
 omni_range = 45.7821
 
 [node name="Color Room" parent="." instance=ExtResource("4_1xvq1")]
+process_mode = 4
+visible = false
+
+[node name="direction_room" parent="." instance=ExtResource("5_h6afb")]

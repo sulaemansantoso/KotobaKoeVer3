@@ -80,7 +80,7 @@ script = ExtResource("1_12g2j")
 material_res = Array[String](["res://Assets/Room2/material/Red.tres", "res://Assets/Room2/material/Orange.tres", "res://Assets/Room2/material/Yellow.tres", "res://Assets/Room2/material/Green.tres", "res://Assets/Room2/material/Blue.tres", "res://Assets/Room2/material/Purple.tres", "res://Assets/Room2/material/Pink.tres", "res://Assets/Room2/material/Brown.tres", "res://Assets/Room2/material/Gray.tres", "res://Assets/Room2/material/Black.tres", "res://Assets/Room2/material/White.tres"])
 
 [node name="DuckModel" parent="." instance=ExtResource("1_l2udt")]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0, 0)
+transform = Transform3D(-7.23998e-06, 0, -2, 0, 2, 0, 2, 0, -7.23998e-06, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

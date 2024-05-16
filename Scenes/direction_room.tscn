@@ -1,0 +1,96 @@
+[gd_scene load_steps=21 format=3 uid="uid://bxuaq2l2oy8r7"]
+
+[ext_resource type="Script" path="res://Scenes/color_room.gd" id="1_88afq"]
+[ext_resource type="AudioStream" uid="uid://bh482kqxqcryf" path="res://Assets/Room2/audio/red.wav" id="4_r875w"]
+[ext_resource type="AudioStream" uid="uid://dq5wf5bb0v6ia" path="res://Assets/Room2/audio/orange.wav" id="5_vygox"]
+[ext_resource type="AudioStream" uid="uid://cvacybsyt7q6f" path="res://Assets/Room2/audio/yellow.wav" id="6_otmuh"]
+[ext_resource type="AudioStream" uid="uid://ccu6nv6gt5iu5" path="res://Assets/Room2/audio/green.wav" id="7_up7kb"]
+[ext_resource type="AudioStream" uid="uid://cj1ykiiuy3pv0" path="res://Assets/Room2/audio/blue.wav" id="8_05p4r"]
+[ext_resource type="AudioStream" uid="uid://csj5dvo227yy3" path="res://Assets/Room2/audio/purple.wav" id="9_7xaqf"]
+[ext_resource type="AudioStream" uid="uid://ia86mu7lyndx" path="res://Assets/Room2/audio/Pink.wav" id="10_vj4f7"]
+[ext_resource type="AudioStream" uid="uid://bheblgx4kww2s" path="res://Assets/Room2/audio/brown.wav" id="11_yuxeb"]
+[ext_resource type="AudioStream" uid="uid://cuv7tj6wredvd" path="res://Assets/Room2/audio/grey.wav" id="12_1ef8m"]
+[ext_resource type="AudioStream" uid="uid://bssjbgyglynpg" path="res://Assets/Room2/audio/black.wav" id="13_skdbr"]
+[ext_resource type="AudioStream" uid="uid://dpinrtnbbb7y4" path="res://Assets/Room2/audio/white.wav" id="14_dt4ax"]
+[ext_resource type="AudioStream" uid="uid://cky17fylmep0n" path="res://Assets/Room1/Audio/12.wav" id="15_ptpy8"]
+[ext_resource type="AudioStream" uid="uid://c4bcmnw8dtcev" path="res://Assets/Room1/Audio/confirmation_001.ogg" id="16_4vs7p"]
+[ext_resource type="AudioStream" uid="uid://bw1blhkglqmw8" path="res://Assets/Room1/Audio/error_001.ogg" id="17_u7boa"]
+
+[sub_resource type="Animation" id="Animation_dv78g"]
+resource_name = "Benar"
+length = 0.4
+
+[sub_resource type="Animation" id="Animation_y1faq"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_i6fev"]
+resource_name = "Salah"
+length = 0.4
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_03xdc"]
+_data = {
+"Benar": SubResource("Animation_dv78g"),
+"RESET": SubResource("Animation_y1faq"),
+"Salah": SubResource("Animation_i6fev")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_3ox7f"]
+size = Vector3(25, 0.5, 25)
+
+[node name="direction_room" type="Node3D"]
+script = ExtResource("1_88afq")
+level = 1
+json_file = "res://Assets/Room2/colors.json"
+
+[node name="Audios" type="Node3D" parent="."]
+
+[node name="1" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("4_r875w")
+
+[node name="2" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("5_vygox")
+
+[node name="3" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("6_otmuh")
+
+[node name="4" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("7_up7kb")
+
+[node name="5" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("8_05p4r")
+
+[node name="6" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("9_7xaqf")
+
+[node name="7" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("10_vj4f7")
+
+[node name="8" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("11_yuxeb")
+
+[node name="9" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("12_1ef8m")
+
+[node name="10" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("13_skdbr")
+
+[node name="11" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("14_dt4ax")
+
+[node name="12" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("15_ptpy8")
+
+[node name="SoalAnimPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_03xdc")
+}
+
+[node name="ConfirmSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_4vs7p")
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_u7boa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.869438, 0)
+mesh = SubResource("BoxMesh_3ox7f")
