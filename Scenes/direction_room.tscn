@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://bxuaq2l2oy8r7"]
+[gd_scene load_steps=29 format=3 uid="uid://bxuaq2l2oy8r7"]
 
 [ext_resource type="Script" path="res://Scenes/color_room.gd" id="1_88afq"]
+[ext_resource type="PackedScene" uid="uid://c4eoq7cgv8c35" path="res://Scenes/TouchableWordBox.tscn" id="2_2ajuw"]
 [ext_resource type="AudioStream" uid="uid://bh482kqxqcryf" path="res://Assets/Room2/audio/red.wav" id="4_r875w"]
 [ext_resource type="AudioStream" uid="uid://dq5wf5bb0v6ia" path="res://Assets/Room2/audio/orange.wav" id="5_vygox"]
 [ext_resource type="AudioStream" uid="uid://cvacybsyt7q6f" path="res://Assets/Room2/audio/yellow.wav" id="6_otmuh"]
@@ -14,7 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://dpinrtnbbb7y4" path="res://Assets/Room2/audio/white.wav" id="14_dt4ax"]
 [ext_resource type="AudioStream" uid="uid://cky17fylmep0n" path="res://Assets/Room1/Audio/12.wav" id="15_ptpy8"]
 [ext_resource type="AudioStream" uid="uid://c4bcmnw8dtcev" path="res://Assets/Room1/Audio/confirmation_001.ogg" id="16_4vs7p"]
+[ext_resource type="Texture2D" uid="uid://brodwtamewk4j" path="res://Assets/Room3/WickerWeavesBrownRattan001/WickerWeavesBrownRattan001_COL_VAR1_1K.jpg" id="16_meje0"]
 [ext_resource type="PackedScene" uid="uid://cd4mjwj0mini" path="res://Scenes/training_direction_board.tscn" id="16_vbkbs"]
+[ext_resource type="Texture2D" uid="uid://3xt3h6tyxnmq" path="res://Assets/Room3/WickerWeavesBrownRattan001/WickerWeavesBrownRattan001_NRM_1K.jpg" id="17_tlkmh"]
 [ext_resource type="AudioStream" uid="uid://bw1blhkglqmw8" path="res://Assets/Room1/Audio/error_001.ogg" id="17_u7boa"]
 
 [sub_resource type="Animation" id="Animation_dv78g"]
@@ -35,13 +38,44 @@ _data = {
 "Salah": SubResource("Animation_i6fev")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psgi8"]
+albedo_texture = ExtResource("16_meje0")
+normal_enabled = true
+normal_texture = ExtResource("17_tlkmh")
+uv1_scale = Vector3(15, 15, 2)
+
 [sub_resource type="BoxMesh" id="BoxMesh_3ox7f"]
+material = SubResource("StandardMaterial3D_psgi8")
 size = Vector3(25, 0.5, 25)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y62hu"]
+
+[sub_resource type="Sky" id="Sky_upik4"]
+sky_material = SubResource("ProceduralSkyMaterial_y62hu")
+
+[sub_resource type="Environment" id="Environment_eiu2n"]
+background_mode = 2
+sky = SubResource("Sky_upik4")
 
 [node name="direction_room" type="Node3D"]
 script = ExtResource("1_88afq")
 level = 1
 json_file = "res://Assets/Room2/colors.json"
+
+[node name="TypingBoard" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.350355, 0.936617, 0, -0.936617, 0.350355, -0.00975168, 0.0345347, -2.34506)
+
+[node name="Board4" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Board" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Board3" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Board2" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Audios" type="Node3D" parent="."]
 
@@ -97,4 +131,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.869438, 0)
 mesh = SubResource("BoxMesh_3ox7f")
 
 [node name="TrainingDirectionBoard" parent="." instance=ExtResource("16_vbkbs")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 2.8064, -4.24292)
+transform = Transform3D(0.2, 0, 0, 0, 0.190819, 0.0599014, 0, -0.0599014, 0.190819, 0, 4.00619, -6.24003)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eiu2n")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00975168, 3.10995, -1.90735e-05)
+omni_range = 11.1344
