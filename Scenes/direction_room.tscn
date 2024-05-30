@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bxuaq2l2oy8r7"]
+[gd_scene load_steps=22 format=3 uid="uid://bxuaq2l2oy8r7"]
 
 [ext_resource type="Script" path="res://Scenes/color_room.gd" id="1_88afq"]
 [ext_resource type="AudioStream" uid="uid://bh482kqxqcryf" path="res://Assets/Room2/audio/red.wav" id="4_r875w"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dpinrtnbbb7y4" path="res://Assets/Room2/audio/white.wav" id="14_dt4ax"]
 [ext_resource type="AudioStream" uid="uid://cky17fylmep0n" path="res://Assets/Room1/Audio/12.wav" id="15_ptpy8"]
 [ext_resource type="AudioStream" uid="uid://c4bcmnw8dtcev" path="res://Assets/Room1/Audio/confirmation_001.ogg" id="16_4vs7p"]
+[ext_resource type="PackedScene" uid="uid://cd4mjwj0mini" path="res://Scenes/training_direction_board.tscn" id="16_vbkbs"]
 [ext_resource type="AudioStream" uid="uid://bw1blhkglqmw8" path="res://Assets/Room1/Audio/error_001.ogg" id="17_u7boa"]
 
 [sub_resource type="Animation" id="Animation_dv78g"]
@@ -94,3 +95,6 @@ stream = ExtResource("17_u7boa")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.869438, 0)
 mesh = SubResource("BoxMesh_3ox7f")
+
+[node name="TrainingDirectionBoard" parent="." instance=ExtResource("16_vbkbs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 2.8064, -4.24292)
