@@ -1,16 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw0eg6ie2hmds"]
+[gd_scene load_steps=8 format=3 uid="uid://bw0eg6ie2hmds"]
 
 [ext_resource type="PackedScene" uid="uid://c2pwic1ocbbpc" path="res://Scenes/player.tscn" id="1_agfx3"]
 [ext_resource type="Script" path="res://Scenes/roomScript.gd" id="1_st7he"]
 [ext_resource type="PackedScene" uid="uid://cyunxclwnej5y" path="res://Scenes/number_room.tscn" id="2_uajx2"]
 [ext_resource type="PackedScene" uid="uid://cgsn7vdlibgu6" path="res://Scenes/color_room.tscn" id="4_1xvq1"]
-[ext_resource type="PackedScene" uid="uid://bxuaq2l2oy8r7" path="res://Scenes/direction_room.tscn" id="5_h6afb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_djm1u"]
-sky_top_color = Color(0.815686, 0.376471, 0.141176, 1)
-sky_horizon_color = Color(0.662745, 0.639216, 0.105882, 1)
-ground_bottom_color = Color(0.898039, 0.792157, 0.164706, 1)
-ground_horizon_color = Color(0.786699, 0.581504, 0.119518, 1)
+sky_top_color = Color(0.0651, 0.78585, 0.93, 1)
+sky_horizon_color = Color(0.8075, 0.938125, 0.95, 1)
+ground_bottom_color = Color(0.7, 1, 0.96, 1)
+ground_horizon_color = Color(0.7161, 0.93, 0.912175, 1)
 
 [sub_resource type="Sky" id="Sky_f8ak1"]
 sky_material = SubResource("ProceduralSkyMaterial_djm1u")
@@ -35,13 +34,6 @@ visible = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nho7v")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.94517, 0)
-light_energy = 3.783
-omni_range = 45.7821
-
 [node name="Color Room" parent="." instance=ExtResource("4_1xvq1")]
 process_mode = 4
 visible = false
-
-[node name="direction_room" parent="." instance=ExtResource("5_h6afb")]

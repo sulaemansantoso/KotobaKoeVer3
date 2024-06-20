@@ -78,8 +78,8 @@ _data = {
 script = ExtResource("2_vjrp7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("2_c8kke")
 
 [node name="Mesh" type="MeshInstance3D" parent="StaticBody3D"]

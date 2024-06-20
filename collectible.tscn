@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2sxot88bojlm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nklfl"]
+albedo_color = Color(0.0864682, 0.526171, 0.12361, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jhoag"]
+material = SubResource("StandardMaterial3D_nklfl")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4xntp"]
+
+[node name="Collectible" type="Area3D"]
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_jhoag")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_4xntp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.850343, 0.946153, 0.34284, 1)
+omni_range = 0.78867

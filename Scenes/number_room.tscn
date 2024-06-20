@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cyunxclwnej5y"]
+[gd_scene load_steps=48 format=3 uid="uid://cyunxclwnej5y"]
 
 [ext_resource type="Script" path="res://Script/NumberRoom.gd" id="1_0w7qx"]
 [ext_resource type="Texture2D" uid="uid://c6k7evmpchqn7" path="res://Assets/Room1/tatami.jpg" id="2_y0r4p"]
@@ -18,9 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="15_atepu"]
 [ext_resource type="AudioStream" uid="uid://cy6di0mosj7ow" path="res://Assets/Room1/Audio/10.wav" id="15_isrbg"]
 [ext_resource type="AudioStream" uid="uid://cl7t5iflrhaks" path="res://Assets/Room1/Audio/11.wav" id="16_eenoi"]
-[ext_resource type="PackedScene" uid="uid://coa1l25uwv1mf" path="res://Scenes/SoalNUmber.tscn" id="16_nt0g6"]
 [ext_resource type="AudioStream" uid="uid://cky17fylmep0n" path="res://Assets/Room1/Audio/12.wav" id="17_fe3lk"]
 [ext_resource type="Texture2D" uid="uid://bu7owise438v1" path="res://Assets/Room1/numbersboardroman.png" id="20_bao37"]
+[ext_resource type="PackedScene" uid="uid://coa1l25uwv1mf" path="res://Scenes/SoalNUmber.tscn" id="20_e0vtf"]
 [ext_resource type="Script" path="res://Scenes/RomanSignBoard.gd" id="21_5thkp"]
 [ext_resource type="PackedScene" uid="uid://buxxl1xntw0p1" path="res://Assets/Room1/japan_lamp_-_old_style.glb" id="23_j1ir8"]
 [ext_resource type="PackedScene" uid="uid://c8vovcy8tfw7j" path="res://Assets/Room1/sakura_tree.glb" id="25_xdsvb"]
@@ -86,9 +86,6 @@ albedo_texture = ExtResource("5_7nxyo")
 [sub_resource type="PlaneMesh" id="PlaneMesh_go1gt"]
 material = SubResource("StandardMaterial3D_30pt4")
 size = Vector2(4, 2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yit0u"]
-vertex_color_use_as_albedo = true
 
 [sub_resource type="Animation" id="Animation_dv78g"]
 resource_name = "Benar"
@@ -396,11 +393,9 @@ stream = ExtResource("17_fe3lk")
 stream = ExtResource("16_eenoi")
 
 [node name="LabelViewport" parent="." instance=ExtResource("15_atepu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35897, -3.52886)
-screen_size = Vector2(8, 3)
-scene = ExtResource("16_nt0g6")
-viewport_size = Vector2(600, 300)
-material = SubResource("StandardMaterial3D_yit0u")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4.35897, -3.52886)
+scene = ExtResource("20_e0vtf")
+viewport_size = Vector2(800, 600)
 
 [node name="Roman" type="Sprite3D" parent="."]
 transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 7.89794, 2.90089, 4.04684)
