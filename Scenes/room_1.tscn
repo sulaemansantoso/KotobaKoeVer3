@@ -41,7 +41,8 @@ light_energy = 3.783
 omni_range = 45.7821
 
 [node name="Color Room" parent="." instance=ExtResource("4_1xvq1")]
-process_mode = 4
-visible = false
 
 [node name="direction_room" parent="." instance=ExtResource("5_h6afb")]
+process_mode = 4
+visible = false
+json_file = "res://Assets/Room3/direction.json"

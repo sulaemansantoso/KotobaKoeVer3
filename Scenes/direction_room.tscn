@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://bxuaq2l2oy8r7"]
 
-[ext_resource type="Script" path="res://Scenes/color_room.gd" id="1_88afq"]
+[ext_resource type="Script" path="res://Scenes/direction_room.gd" id="1_qmtyp"]
 [ext_resource type="PackedScene" uid="uid://c4eoq7cgv8c35" path="res://Scenes/TouchableWordBox.tscn" id="2_2ajuw"]
 [ext_resource type="AudioStream" uid="uid://bh482kqxqcryf" path="res://Assets/Room2/audio/red.wav" id="4_r875w"]
 [ext_resource type="AudioStream" uid="uid://dq5wf5bb0v6ia" path="res://Assets/Room2/audio/orange.wav" id="5_vygox"]
@@ -58,9 +58,7 @@ background_mode = 2
 sky = SubResource("Sky_upik4")
 
 [node name="direction_room" type="Node3D"]
-script = ExtResource("1_88afq")
-level = 1
-json_file = "res://Assets/Room2/colors.json"
+script = ExtResource("1_qmtyp")
 
 [node name="TypingBoard" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.350355, 0.936617, 0, -0.936617, 0.350355, -0.00975168, 0.0345347, -2.34506)

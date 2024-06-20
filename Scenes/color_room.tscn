@@ -1,7 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://cgsn7vdlibgu6"]
+[gd_scene load_steps=33 format=3 uid="uid://cgsn7vdlibgu6"]
 
 [ext_resource type="Script" path="res://Scenes/color_room.gd" id="2_6g36c"]
-[ext_resource type="Texture2D" uid="uid://c6k7evmpchqn7" path="res://Assets/Room1/tatami.jpg" id="2_ru5l6"]
 [ext_resource type="Texture2D" uid="uid://rjdmvqp4oaoi" path="res://Assets/Room2/woodtexture.jpg" id="3_hn8ni"]
 [ext_resource type="Texture2D" uid="uid://udr6f62yy42j" path="res://Assets/Room1/training panel sign.png" id="5_pwmch"]
 [ext_resource type="PackedScene" uid="uid://c4eoq7cgv8c35" path="res://Scenes/TouchableWordBox.tscn" id="5_tp8qe"]
@@ -24,8 +23,9 @@
 [ext_resource type="AudioStream" uid="uid://c4bcmnw8dtcev" path="res://Assets/Room1/Audio/confirmation_001.ogg" id="26_3icvk"]
 [ext_resource type="AudioStream" uid="uid://bw1blhkglqmw8" path="res://Assets/Room1/Audio/error_001.ogg" id="27_nt0r6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyt5i"]
-albedo_texture = ExtResource("2_ru5l6")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y7o1"]
+albedo_texture = ExtResource("3_hn8ni")
+uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4e3tv"]
 
@@ -62,12 +62,6 @@ _data = {
 "Salah": SubResource("Animation_i6fev")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltm7e"]
-albedo_texture = ExtResource("3_hn8ni")
-
-[sub_resource type="BoxMesh" id="BoxMesh_ax7ra"]
-material = SubResource("StandardMaterial3D_ltm7e")
-
 [node name="Color Room" type="Node3D"]
 script = ExtResource("2_6g36c")
 level = 1
@@ -77,7 +71,7 @@ json_file = "res://Assets/Room2/colors.json"
 
 [node name="Floor" type="MeshInstance3D" parent="Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16879, 0)
-material_override = SubResource("StandardMaterial3D_kyt5i")
+material_override = SubResource("StandardMaterial3D_8y7o1")
 mesh = SubResource("BoxMesh_jebxl")
 skeleton = NodePath("../..")
 
@@ -245,9 +239,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.659476, 0, 0)
 
 [node name="Duck3" parent="model_position" instance=ExtResource("22_g0yvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4033, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49356, 2.45276)
-mesh = SubResource("BoxMesh_ax7ra")
 
 [connection signal="button_pressed" from="TypingBoard/ButtonGuess" to="." method="_on_button_guess_button_pressed"]
