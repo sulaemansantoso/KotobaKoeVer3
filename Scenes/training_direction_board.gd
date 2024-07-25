@@ -4,6 +4,9 @@ extends Node3D
 var target : PackedScene
 var target_instance : Area3D
 
+signal got_score
+
+
 enum Movement {
 	up,
 	down,
@@ -35,6 +38,7 @@ func target_collected_handle() :
 	$GridMap.remove_child(target_instance)
 	target_instance.queue_free()
 	$Timer.start()
+	emit_signal("got_score")
 	pass
 
 func move_character(idx)->void :
@@ -47,6 +51,17 @@ func move_character(idx)->void :
 		movement = Vector3(0,speed,0)
 	if (idx == 3) :
 		movement = Vector3(0,-speed,0)
+	
+	if (idx == 7) :
+		movement = Vector3(-speed,0,0)
+	if (idx == 6) :
+		movement = Vector3(speed,0,0)
+	if (idx == 5) :
+		movement = Vector3(0,speed,0)
+	if (idx == 4) :
+		movement = Vector3(0,-speed,0)
+		
+	
 	
 	$GridMap/CharacterBody3D.velocity = movement
 	

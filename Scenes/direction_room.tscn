@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://bxuaq2l2oy8r7"]
+[gd_scene load_steps=33 format=3 uid="uid://bxuaq2l2oy8r7"]
 
 [ext_resource type="Script" path="res://Scenes/direction_room.gd" id="1_qmtyp"]
 [ext_resource type="PackedScene" uid="uid://c4eoq7cgv8c35" path="res://Scenes/TouchableWordBox.tscn" id="2_2ajuw"]
 [ext_resource type="Texture2D" uid="uid://udr6f62yy42j" path="res://Assets/Room1/training panel sign.png" id="2_p3m7i"]
 [ext_resource type="AudioStream" uid="uid://dds2f4eo2jry0" path="res://Assets/Room3/Audio/1.wav" id="4_lhkol"]
 [ext_resource type="AudioStream" uid="uid://ds6b4xu0epi7c" path="res://Assets/Room3/Audio/2.wav" id="5_e136s"]
+[ext_resource type="PackedScene" uid="uid://ctw7va0perb5q" path="res://Scenes/direction_score.tscn" id="5_ms2ta"]
 [ext_resource type="AudioStream" uid="uid://cmbymct0v4ij3" path="res://Assets/Room3/Audio/3.wav" id="6_gafuw"]
 [ext_resource type="AudioStream" uid="uid://d1pkywgmulkgg" path="res://Assets/Room3/Audio/4.wav" id="7_l8445"]
 [ext_resource type="AudioStream" uid="uid://baufch5lh53kh" path="res://Assets/Room3/Audio/5.wav" id="8_kdmt5"]
@@ -114,9 +115,22 @@ idx = 7
 
 [node name="TypingBoard" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.350355, 0.936617, 0, -0.936617, 0.350355, -0.00975168, 0.0345347, -2.34506)
+top_level = true
 
 [node name="Board4" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Board5" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 0)
+
+[node name="Board6" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
+
+[node name="Board7" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+
+[node name="Board8" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 
 [node name="Board" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -129,6 +143,11 @@ idx = 2
 [node name="Board2" parent="TypingBoard" instance=ExtResource("2_2ajuw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 idx = 3
+
+[node name="Score" parent="TypingBoard" instance=ExtResource("17_m804l")]
+screen_size = Vector2(0.9, 0.9)
+scene = ExtResource("5_ms2ta")
+transparent = 0
 
 [node name="Audios" type="Node3D" parent="."]
 
@@ -177,7 +196,7 @@ mesh = SubResource("BoxMesh_3ox7f")
 shape = SubResource("ConcavePolygonShape3D_ifqqw")
 
 [node name="TrainingDirectionBoard" parent="." instance=ExtResource("16_vbkbs")]
-transform = Transform3D(0.2, 0, 0, 0, 0.190819, 0.0599014, 0, -0.0599014, 0.190819, 0, 4.00619, -6.24003)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 4.00619, -6.24003)
 target = ExtResource("17_3xx3g")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -197,3 +216,5 @@ transform = Transform3D(0.198239, 0, -0.980154, 0, 1, 0, 0.980154, 0, 0.198239, 
 scene = ExtResource("18_7mpla")
 viewport_size = Vector2(500, 500)
 transparent = 0
+
+[connection signal="got_score" from="TrainingDirectionBoard" to="." method="_on_training_direction_board_got_score"]

@@ -12,13 +12,21 @@ var hide_color: bool = false
 @export 
 var idx :int
 
+@export
+var active : bool = true
+
 var selected_value : String
 
 signal ValueSelected
 
 func _ready():
 	#var idx = randi()%9
+	active = true
 	pass
+	
+func change_color(color) :
+	$StaticBody3D/Mesh/BackgroundSprite.modulate(color)
+	pass	
 
 func change_idx(id) :
 	idx = id
@@ -48,7 +56,7 @@ func _on_static_body_3d_pointer_event(event):
 	if (!isDemo) and (event.event_type == 2):
 		#do something on demo
 		pass
-	if (event.event_type ==2) :
+	if (event.event_type ==2) and( active) :
 		emit_signal("ValueSelected", idx)
 		$AnimationPlayer.play("clicked")
 	pass # Replace with function body.

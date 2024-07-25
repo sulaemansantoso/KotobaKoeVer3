@@ -45,4 +45,4 @@ process_mode = 4
 visible = false
 
 [node name="direction_room" parent="." instance=ExtResource("5_h6afb")]
-json_file = "res://Assets/Room3/direction.json"
+level = 2

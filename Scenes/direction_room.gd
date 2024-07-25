@@ -8,6 +8,9 @@ var json_value
 var to_guess :Array = []
 var guess_right : int = 0
 
+var is_normal :bool = true
+
+
 func spawn_target() :
 	
 	pass
@@ -37,7 +40,7 @@ func _ready():
 		if (board.has_method("pasang_resource")):
 			board.pasang_resource(json_value)
 			board.change_idx( val)
-			val = (val +1)%6
+			val = (val +1)%8
 			board.connect("ValueSelected", typing_tile_click)
 	#randomize_duck()
 	#
@@ -56,3 +59,33 @@ func learning_tile_click(idx) :
 	pass
 	
 
+func _on_training_direction_board_got_score():
+	$TypingBoard/Score.get_scene_instance().add_score(1)
+	is_normal = !is_normal
+	if (level >0) :
+		#randomize board
+		var idx_array = [0,1,2,3,4,5,6,7]
+		idx_array.shuffle()
+		print(idx_array)
+		var val :int = 0
+		for board in $TypingBoard.get_children() :
+			if (board.has_method("change_idx")):
+				board.change_idx( idx_array[val])
+				if (level > 1) :
+					#kasih disable
+					if (is_normal) :
+						if (idx_array[val] < 4):
+							board.active = true
+							board.hide_button_color(false)
+						else :
+							board.active = false
+							board.hide_button_color(true)
+					else :
+						if (idx_array[val] < 4):
+							board.active = false
+							board.hide_button_color(true)
+						else :
+							board.active = true
+							board.hide_button_color(false)
+				val = val +1
+	pass # Replace with function body.
