@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://uep7g2qvqwnk"]
+
+[ext_resource type="Texture2D" uid="uid://udr6f62yy42j" path="res://Assets/Room1/training panel sign.png" id="1_xh1eh"]
+[ext_resource type="PackedScene" uid="uid://c4eoq7cgv8c35" path="res://Scenes/TouchableWordBox.tscn" id="2_vm15m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30pt4"]
+transparency = 1
+albedo_texture = ExtResource("1_xh1eh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_go1gt"]
+material = SubResource("StandardMaterial3D_30pt4")
+size = Vector2(4, 2)
+
+[node name="LearningBoard" type="Node3D"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.3933, 0, 0.54557)
+
+[node name="PapanPengumuman" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.399485, -0.916739, 0, 0.91674, -0.399485, -4.76837e-07, 6.63958, 0.853001)
+mesh = SubResource("PlaneMesh_go1gt")
+skeleton = NodePath("../..")
+
+[node name="1" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.39124, 1.90735e-06)
+
+[node name="2" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39124, 0)
+idx = 1
+
+[node name="3" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.39124, 0)
+idx = 2
+
+[node name="4" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.39124, 1.90735e-06)
+idx = 3
+
+[node name="5" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.39124, 0)
+idx = 4
+
+[node name="6" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.39124, 0)
+idx = 5
+
+[node name="7" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.39124, 1.90735e-06)
+idx = 6
+
+[node name="8" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.39124, 0)
+isDemo = true
+idx = 7
+
+[node name="9" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.39124, 0)
+idx = 8
+
+[node name="10" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 4.38992, 0)
+value = [null, null, null, null, null, null, null]
+idx = 9
+
+[node name="11" parent="." instance=ExtResource("2_vm15m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4.38992, 4.76837e-07)
+idx = 10

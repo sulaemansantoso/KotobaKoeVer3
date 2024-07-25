@@ -1,8 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://cgsn7vdlibgu6"]
+[gd_scene load_steps=31 format=3 uid="uid://cgsn7vdlibgu6"]
 
 [ext_resource type="Script" path="res://Scenes/color_room.gd" id="2_6g36c"]
 [ext_resource type="Texture2D" uid="uid://rjdmvqp4oaoi" path="res://Assets/Room2/woodtexture.jpg" id="3_hn8ni"]
-[ext_resource type="Texture2D" uid="uid://udr6f62yy42j" path="res://Assets/Room1/training panel sign.png" id="5_pwmch"]
+[ext_resource type="PackedScene" uid="uid://uep7g2qvqwnk" path="res://Scenes/learning_board_scene.tscn" id="3_wrl5f"]
 [ext_resource type="PackedScene" uid="uid://c4eoq7cgv8c35" path="res://Scenes/TouchableWordBox.tscn" id="5_tp8qe"]
 [ext_resource type="PackedScene" uid="uid://d4gq8f5epjp14" path="res://tapable_button.tscn" id="6_t21d0"]
 [ext_resource type="AudioStream" uid="uid://bh482kqxqcryf" path="res://Assets/Room2/audio/red.wav" id="7_7y40d"]
@@ -35,14 +35,6 @@ size = Vector3(50, 0.2, 50)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0yggx"]
 data = PackedVector3Array(-25, 0.1, 25, 25, 0.1, 25, -25, -0.1, 25, 25, 0.1, 25, 25, -0.1, 25, -25, -0.1, 25, 25, 0.1, -25, -25, 0.1, -25, 25, -0.1, -25, -25, 0.1, -25, -25, -0.1, -25, 25, -0.1, -25, 25, 0.1, 25, 25, 0.1, -25, 25, -0.1, 25, 25, 0.1, -25, 25, -0.1, -25, 25, -0.1, 25, -25, 0.1, -25, -25, 0.1, 25, -25, -0.1, -25, -25, 0.1, 25, -25, -0.1, 25, -25, -0.1, -25, 25, 0.1, 25, -25, 0.1, 25, 25, 0.1, -25, -25, 0.1, 25, -25, 0.1, -25, 25, 0.1, -25, -25, -0.1, 25, 25, -0.1, 25, -25, -0.1, -25, 25, -0.1, 25, 25, -0.1, -25, -25, -0.1, -25)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30pt4"]
-transparency = 1
-albedo_texture = ExtResource("5_pwmch")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_go1gt"]
-material = SubResource("StandardMaterial3D_30pt4")
-size = Vector2(4, 2)
 
 [sub_resource type="Animation" id="Animation_dv78g"]
 resource_name = "Benar"
@@ -80,58 +72,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_0yggx")
 
-[node name="LearningBoard" type="Node3D" parent="."]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.3933, 0, 0.54557)
-
-[node name="PapanPengumuman" type="MeshInstance3D" parent="LearningBoard"]
-transform = Transform3D(1, 0, 0, 0, -0.399485, -0.916739, 0, 0.91674, -0.399485, -4.76837e-07, 6.63958, 0.853001)
-mesh = SubResource("PlaneMesh_go1gt")
-skeleton = NodePath("../..")
-
-[node name="1" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.39124, 1.90735e-06)
-
-[node name="2" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39124, 0)
-idx = 1
-
-[node name="3" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.39124, 0)
-idx = 2
-
-[node name="4" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.39124, 1.90735e-06)
-idx = 3
-
-[node name="5" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.39124, 0)
-idx = 4
-
-[node name="6" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.39124, 0)
-idx = 5
-
-[node name="7" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.39124, 1.90735e-06)
-idx = 6
-
-[node name="8" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.39124, 0)
-isDemo = true
-idx = 7
-
-[node name="9" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.39124, 0)
-idx = 8
-
-[node name="10" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 4.38992, 0)
-value = [null, null, null, null, null, null, null]
-idx = 9
-
-[node name="11" parent="LearningBoard" instance=ExtResource("5_tp8qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4.38992, 4.76837e-07)
-idx = 10
+[node name="LearningBoard" parent="." instance=ExtResource("3_wrl5f")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.40002, 0.0330462, 0.519768)
 
 [node name="TypingBoard" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258145, 0.966107, 0, -0.966106, 0.258144, -0.0293176, -0.148989, 2.27333)
