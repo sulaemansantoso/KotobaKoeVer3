@@ -60,4 +60,3 @@ func _on_static_body_3d_pointer_event(event):
 		emit_signal("ValueSelected", idx)
 		$AnimationPlayer.play("clicked")
 	pass # Replace with function body.
-

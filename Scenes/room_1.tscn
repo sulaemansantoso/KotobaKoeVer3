@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw0eg6ie2hmds"]
+[gd_scene load_steps=12 format=3 uid="uid://bw0eg6ie2hmds"]
 
 [ext_resource type="PackedScene" uid="uid://c2pwic1ocbbpc" path="res://Scenes/player.tscn" id="1_agfx3"]
 [ext_resource type="Script" path="res://Scenes/roomScript.gd" id="1_st7he"]
@@ -21,6 +21,33 @@ sky = SubResource("Sky_f8ak1")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.0
 fog_light_color = Color(0.765675, 0.788613, 0.824658, 1)
+
+[sub_resource type="Animation" id="Animation_teoaa"]
+resource_name = "FadeInFadeOut"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null],
+"method": &"_on_number_room_bilang_pindah_level"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1l000"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fln1i"]
+_data = {
+"FadeInFadeOut": SubResource("Animation_teoaa"),
+"RESET": SubResource("Animation_1l000")
+}
 
 [node name="RoomSetting" type="Node3D"]
 script = ExtResource("1_st7he")
@@ -46,3 +73,8 @@ visible = false
 
 [node name="direction_room" parent="." instance=ExtResource("5_h6afb")]
 level = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fln1i")
+}

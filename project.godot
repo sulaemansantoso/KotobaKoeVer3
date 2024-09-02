@@ -12,12 +12,13 @@ config_version=5
 
 config/name="KotobaKoe"
 run/main_scene="res://Scenes/room_1.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+XrSimulator="res://addons/xr-simulator/XRSimulator.tscn"
 
 [editor]
 
