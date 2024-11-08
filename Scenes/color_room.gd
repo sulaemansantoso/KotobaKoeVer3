@@ -16,7 +16,7 @@ func update_info(idx) :
 func _ready():
 	#load info from json file into an array of object
 	var json_string =  FileAccess.get_file_as_string(json_file)
-	print(json_string)
+	
 	json_value = JSON.parse_string(json_string)
 	for board in $LearningBoard.get_children():
 		if (board.has_method("pasang_resource")):
@@ -103,4 +103,3 @@ func reset_typing_board(level) :
 func _on_button_guess_button_pressed():
 	randomize_duck()
 	pass # Replace with function body.
-

@@ -1,26 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bw0eg6ie2hmds"]
+[gd_scene load_steps=11 format=3 uid="uid://bw0eg6ie2hmds"]
 
 [ext_resource type="PackedScene" uid="uid://c2pwic1ocbbpc" path="res://Scenes/player.tscn" id="1_agfx3"]
 [ext_resource type="Script" path="res://Scenes/roomScript.gd" id="1_st7he"]
 [ext_resource type="PackedScene" uid="uid://cyunxclwnej5y" path="res://Scenes/number_room.tscn" id="2_uajx2"]
 [ext_resource type="PackedScene" uid="uid://cgsn7vdlibgu6" path="res://Scenes/color_room.tscn" id="4_1xvq1"]
 [ext_resource type="PackedScene" uid="uid://bxuaq2l2oy8r7" path="res://Scenes/direction_room.tscn" id="5_h6afb"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_djm1u"]
-sky_top_color = Color(0.815686, 0.376471, 0.141176, 1)
-sky_horizon_color = Color(0.662745, 0.639216, 0.105882, 1)
-ground_bottom_color = Color(0.898039, 0.792157, 0.164706, 1)
-ground_horizon_color = Color(0.786699, 0.581504, 0.119518, 1)
-
-[sub_resource type="Sky" id="Sky_f8ak1"]
-sky_material = SubResource("ProceduralSkyMaterial_djm1u")
-
-[sub_resource type="Environment" id="Environment_nho7v"]
-background_mode = 2
-sky = SubResource("Sky_f8ak1")
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.0
-fog_light_color = Color(0.765675, 0.788613, 0.824658, 1)
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_wpeem"]
+[ext_resource type="PackedScene" uid="uid://w8vwt860ei2w" path="res://level_setting.tscn" id="7_1fpmh"]
 
 [sub_resource type="Animation" id="Animation_teoaa"]
 resource_name = "FadeInFadeOut"
@@ -56,25 +42,26 @@ script = ExtResource("1_st7he")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.32774)
 
 [node name="number_room" parent="." instance=ExtResource("2_uajx2")]
-process_mode = 4
-visible = false
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_nho7v")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.94517, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.534331, 2.94517, 11.3696)
 light_energy = 3.783
 omni_range = 45.7821
 
 [node name="Color Room" parent="." instance=ExtResource("4_1xvq1")]
-process_mode = 4
-visible = false
-
-[node name="direction_room" parent="." instance=ExtResource("5_h6afb")]
-level = 2
+transform = Transform3D(0.228283, 0, -0.973595, 0, 1, 0, 0.973595, 0, 0.228283, 12.3098, 0.0466442, 10.0547)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fln1i")
 }
+
+[node name="direction_room" parent="." instance=ExtResource("5_h6afb")]
+transform = Transform3D(-0.574005, 0, 0.818852, 0, 1, 0, -0.818852, 0, -0.574005, -10, 1, 16)
+
+[node name="level_setting" parent="." instance=ExtResource("6_wpeem")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.58483, 22.7188)
+screen_size = Vector2(4, 3)
+scene = ExtResource("7_1fpmh")
+viewport_size = Vector2(800, 400)
+transparent = 0

@@ -5,7 +5,7 @@
 		"Furigana": "(ひだり)",
 		"Romaji": "Hidari",
 		"Katakana": "レフト",
-		"color":"0xff0000"
+		"color":"red"
 	},
 	{
 		"English": "Right",
@@ -13,7 +13,7 @@
 		"Furigana": "",
 		"Romaji": "Migi",
 		"Katakana": "",
-		"color": "0xff8800"
+		"color": "yellow"
 	},
 	{
 		"English": "Up",
@@ -21,7 +21,7 @@
 		"Furigana": "",
 		"Romaji": "Ue",
 		"Katakana": "",
-		"color":"0xffff00"
+		"color":"green"
 	},
 	{
 		"English": "Down",
@@ -29,7 +29,7 @@
 		"Furigana": "",
 		"Romaji": "Shita",
 		"Katakana": "",
-		"color":"0x00ff00"
+		"color":"blue"
 	},
 	{
 		"English": "North",
@@ -37,7 +37,7 @@
 		"Furigana": "",
 		"Romaji": "Kita",
 		"Katakana": "",
-		"color":"0x0000ff"
+		"color":"lime"
 	},
 	{
 		"English": "South",
@@ -45,7 +45,7 @@
 		"Furigana": "",
 		"Romaji": "Minami",
 		"Katakana": "",
-		"color":"0xff00ff"
+		"color":"white"
 	},
 	{
 		"English": "West",
@@ -53,7 +53,7 @@
 		"Furigana": "",
 		"Romaji": "Nishi",
 		"Katakana": "",
-		"color":"0xffaaaa"
+		"color":"orange"
 	},
 	{
 		"English": "East",
@@ -61,6 +61,6 @@
 		"Furigana": "",
 		"Romaji": "higashi",
 		"Katakana": "",
-		"color":"0x774342"
+		"color":"black"
 	},
 ]

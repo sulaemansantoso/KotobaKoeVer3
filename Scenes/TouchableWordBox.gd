@@ -34,7 +34,7 @@ func change_idx(id) :
 	$StaticBody3D/Mesh/Label3D.text = selected_value
 	var mesh_panel : Sprite3D= $"StaticBody3D/Mesh/Flashing Layer"
 	#mesh_panel.get_active_material(0).albedo_color = Color(value[idx]["English"])
-	$StaticBody3D/Mesh/BackgroundSprite.modulate = Color(value[idx]["English"])
+	$StaticBody3D/Mesh/BackgroundSprite.modulate = Color(value[idx]["color"])
 	pass
 
 func hide_button_color(shouldHide):
@@ -49,7 +49,7 @@ func pasang_resource(res):
 	#mesh_panel.get_active_material(0).albedo_color = Color(value[idx]["English"])
 	#print(Color(value[idx]["English"]))
 	#mesh_panel.get_active_material(0).albedo_color = Color(value[idx]["English"])
-	$StaticBody3D/Mesh/BackgroundSprite.modulate = Color(value[idx]["English"])
+	$StaticBody3D/Mesh/BackgroundSprite.modulate = Color(value[idx]["color"])
 
 
 func _on_static_body_3d_pointer_event(event):

@@ -1,7 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://cgsn7vdlibgu6"]
+[gd_scene load_steps=26 format=3 uid="uid://cgsn7vdlibgu6"]
 
 [ext_resource type="Script" path="res://Scenes/color_room.gd" id="2_6g36c"]
-[ext_resource type="Texture2D" uid="uid://rjdmvqp4oaoi" path="res://Assets/Room2/woodtexture.jpg" id="3_hn8ni"]
 [ext_resource type="PackedScene" uid="uid://uep7g2qvqwnk" path="res://Scenes/learning_board_scene.tscn" id="3_wrl5f"]
 [ext_resource type="PackedScene" uid="uid://c4eoq7cgv8c35" path="res://Scenes/TouchableWordBox.tscn" id="5_tp8qe"]
 [ext_resource type="PackedScene" uid="uid://d4gq8f5epjp14" path="res://tapable_button.tscn" id="6_t21d0"]
@@ -22,19 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://c1l6ks6oe4yw1" path="res://Scenes/InformationPanel.tscn" id="22_qdymn"]
 [ext_resource type="AudioStream" uid="uid://c4bcmnw8dtcev" path="res://Assets/Room1/Audio/confirmation_001.ogg" id="26_3icvk"]
 [ext_resource type="AudioStream" uid="uid://bw1blhkglqmw8" path="res://Assets/Room1/Audio/error_001.ogg" id="27_nt0r6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y7o1"]
-albedo_texture = ExtResource("3_hn8ni")
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4e3tv"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_jebxl"]
-material = SubResource("StandardMaterial3D_4e3tv")
-size = Vector3(50, 0.2, 50)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0yggx"]
-data = PackedVector3Array(-25, 0.1, 25, 25, 0.1, 25, -25, -0.1, 25, 25, 0.1, 25, 25, -0.1, 25, -25, -0.1, 25, 25, 0.1, -25, -25, 0.1, -25, 25, -0.1, -25, -25, 0.1, -25, -25, -0.1, -25, 25, -0.1, -25, 25, 0.1, 25, 25, 0.1, -25, 25, -0.1, 25, 25, 0.1, -25, 25, -0.1, -25, 25, -0.1, 25, -25, 0.1, -25, -25, 0.1, 25, -25, -0.1, -25, -25, 0.1, 25, -25, -0.1, 25, -25, -0.1, -25, 25, 0.1, 25, -25, 0.1, 25, 25, 0.1, -25, -25, 0.1, 25, -25, 0.1, -25, 25, 0.1, -25, -25, -0.1, 25, 25, -0.1, 25, -25, -0.1, -25, 25, -0.1, 25, 25, -0.1, -25, -25, -0.1, -25)
 
 [sub_resource type="Animation" id="Animation_dv78g"]
 resource_name = "Benar"
@@ -60,17 +46,6 @@ level = 1
 json_file = "res://Assets/Room2/colors.json"
 
 [node name="Static" type="Node3D" parent="."]
-
-[node name="Floor" type="MeshInstance3D" parent="Static"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16879, 0)
-material_override = SubResource("StandardMaterial3D_8y7o1")
-mesh = SubResource("BoxMesh_jebxl")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Static/Floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/Floor/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_0yggx")
 
 [node name="LearningBoard" parent="." instance=ExtResource("3_wrl5f")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.40002, 0.0330462, 0.519768)

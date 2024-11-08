@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=3 uid="uid://w8vwt860ei2w"]
+
+[ext_resource type="Theme" uid="uid://c2pl5mbxrjys6" path="res://buton_theme.tres" id="1_f6e2p"]
+[ext_resource type="Script" path="res://level_setting.gd" id="1_qyi0d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ap6rw"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ds8n"]
+font_size = 60
+
+[node name="Level Setting" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qyi0d")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Column1" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/Column1"]
+layout_mode = 2
+text = " Scene 1 "
+label_settings = SubResource("LabelSettings_ap6rw")
+
+[node name="btn_plus_scene_1" type="Button" parent="HBoxContainer/Column1"]
+layout_mode = 2
+theme = ExtResource("1_f6e2p")
+text = "+"
+
+[node name="label_level_scene_1" type="Label" parent="HBoxContainer/Column1"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_0ds8n")
+horizontal_alignment = 1
+
+[node name="btn_min_scene_1" type="Button" parent="HBoxContainer/Column1"]
+layout_mode = 2
+theme = ExtResource("1_f6e2p")
+text = "-"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Column2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/Column2"]
+layout_mode = 2
+text = " Scene 2 "
+label_settings = SubResource("LabelSettings_ap6rw")
+
+[node name="btn_plus_scene_2" type="Button" parent="HBoxContainer/Column2"]
+layout_mode = 2
+theme = ExtResource("1_f6e2p")
+text = "+"
+
+[node name="label_level_scene_2" type="Label" parent="HBoxContainer/Column2"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_0ds8n")
+horizontal_alignment = 1
+
+[node name="btn_min_scene_2" type="Button" parent="HBoxContainer/Column2"]
+layout_mode = 2
+theme = ExtResource("1_f6e2p")
+text = "-"
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Column3" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/Column3"]
+layout_mode = 2
+text = " Scene 3 
+"
+label_settings = SubResource("LabelSettings_ap6rw")
+
+[node name="btn_plus_scene_3" type="Button" parent="HBoxContainer/Column3"]
+layout_mode = 2
+theme = ExtResource("1_f6e2p")
+text = "+"
+
+[node name="label_level_scene_3" type="Label" parent="HBoxContainer/Column3"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_0ds8n")
+horizontal_alignment = 1
+
+[node name="btn_min_scene_3" type="Button" parent="HBoxContainer/Column3"]
+layout_mode = 2
+theme = ExtResource("1_f6e2p")
+text = "-"
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/Column1/btn_plus_scene_1" to="." method="_on_btn_plus_scene_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Column1/btn_min_scene_1" to="." method="_on_btn_min_scene_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Column2/btn_plus_scene_2" to="." method="_on_btn_plus_scene_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Column2/btn_min_scene_2" to="." method="_on_btn_min_scene_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Column3/btn_plus_scene_3" to="." method="_on_btn_plus_scene_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/Column3/btn_min_scene_3" to="." method="_on_btn_min_scene_3_pressed"]

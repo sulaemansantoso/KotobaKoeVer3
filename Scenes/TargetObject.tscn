@@ -8,10 +8,13 @@ albedo_color = Color(0.79788, 0.964637, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_egidn"]
 material = SubResource("StandardMaterial3D_wnm5b")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_jph3b"]
-radius = 1.00752
+[sub_resource type="SphereShape3D" id="SphereShape3D_auott"]
+radius = 1.44868
 
 [node name="Node3D" type="Area3D"]
+collision_layer = 65535
+collision_mask = 65535
+priority = 1
 script = ExtResource("1_yo4oh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -19,6 +22,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("SphereMesh_egidn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_jph3b")
+shape = SubResource("SphereShape3D_auott")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

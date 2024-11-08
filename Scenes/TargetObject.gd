@@ -5,12 +5,11 @@ signal target_collected
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-
 func _on_body_entered(body):
+	print ("hit registered")
 	emit_signal("target_collected")
 	pass # Replace with function body.

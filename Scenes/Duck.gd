@@ -33,7 +33,7 @@ func change_value (val) :
 func change_material(idx) :
 	var material_to_set
 
-	if (idx>0) :
+	if (idx >=0) :
 		material_to_set = material_set[idx]
 	else :
 		material_to_set = disabled_material

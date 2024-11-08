@@ -5,7 +5,7 @@
 		"Furigana": "あか",
 		"Romaji": "Aka",
 		"Katakana": "レッド",
-		"color":"0xff0000"
+		"color":"red"
 	},
 	{
 		"English": "ORANGE",
@@ -13,7 +13,7 @@
 		"Furigana": "だいだいいろ",
 		"Romaji": "Daidaiiro / Orenji",
 		"Katakana": "オレンジ",
-		"color": "0xff8800"
+		"color": "orange"
 	},
 	{
 		"English": "Yellow",
@@ -21,7 +21,7 @@
 		"Furigana": "きいろ",
 		"Romaji": "Kiiro",
 		"Katakana": "イエロー",
-		"color":"0xffff00"
+		"color":"yellow"
 	},
 	{
 		"English": "GREEN",
@@ -29,7 +29,7 @@
 		"Furigana": "みどり",
 		"Romaji": "Midori",
 		"Katakana": "グリーン",
-		"color":"0x00ff00"
+		"color":"green"
 	},
 	{
 		"English": "BLUE",
@@ -37,7 +37,7 @@
 		"Furigana": "あお",
 		"Romaji": "Ao",
 		"Katakana": "ブルー",
-		"color":"0x0000ff"
+		"color":"blue"
 	},
 	{
 		"English": "PURPLE",
@@ -45,7 +45,7 @@
 		"Furigana": "むらさき",
 		"Romaji": "Murasaki",
 		"Katakana": "パープル",
-		"color":"0xff00ff"
+		"color":"purple"
 	},
 	{
 		"English": "PINK",
@@ -53,7 +53,7 @@
 		"Furigana": "ももいろ",
 		"Romaji": "Momoiro / Pinku",
 		"Katakana": "ピンク",
-		"color":"0xffaaaa"
+		"color":"pink"
 	},
 	{
 		"English": "BROWN",
@@ -61,7 +61,7 @@
 		"Furigana": "ちゃいろ",
 		"Romaji": "Chairo",
 		"Katakana": "ブラウン",
-		"color":"0x774342"
+		"color":"brown"
 	},
 	{
 		"English": "GRAY",
@@ -69,7 +69,7 @@
 		"Furigana": "はいいろ",
 		"Romaji": "Haiiro",
 		"Katakana": "グレイ",
-		"color":"0xaaaaaa"
+		"color":"gray"
 	},
 	{
 		"English": "BLACK",
@@ -77,7 +77,7 @@
 		"Furigana": "くろ",
 		"Romaji": "Kuro",
 		"Katakana": "ブラック",
-		"color":"0x000000"
+		"color":"black"
 	},
 	{
 		"English": "WHITE",
@@ -85,6 +85,6 @@
 		"Furigana": "しろ",
 		"Romaji": "Shiro",
 		"Katakana": "ホワイト",
-		"color":"0xFFFFFF"
+		"color":"white"
 	}
 ]

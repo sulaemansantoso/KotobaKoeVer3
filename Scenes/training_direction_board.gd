@@ -6,7 +6,6 @@ var target_instance : Area3D
 
 signal got_score
 
-
 enum Movement {
 	up,
 	down,
@@ -14,19 +13,17 @@ enum Movement {
 	right
 };
 
-var speed : int = 32
+var speed : float = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
 	pass # Replace with function body.
 
 func spawn_instance() :
 	var coord : Vector2
-	
 	coord = Vector2(randi_range(-16,17), randi_range(-18,16))
 	target_instance  = target.instantiate()
-	target_instance.position = Vector3(coord.x,-2.8, coord.y)
+	target_instance.position = Vector3(coord.x,-3, coord.y)
 	$GridMap.add_child(target_instance)
 	target_instance.connect("target_collected", target_collected_handle)
 	
@@ -35,8 +32,11 @@ func spawn_instance() :
 	pass
 	
 func target_collected_handle() :
+	print ("target collected")
+	target_instance.call_deferred("queue_free")
 	$GridMap.remove_child(target_instance)
-	target_instance.queue_free()
+	#target_instance.queue_free()
+	print("starts timer")
 	$Timer.start()
 	emit_signal("got_score")
 	pass
@@ -61,11 +61,11 @@ func move_character(idx)->void :
 	if (idx == 4) :
 		movement = Vector3(0,-speed,0)
 		
+	var tween = create_tween()
+	var target = $CharacterBody3D
+	tween.tween_property(target, "position", target.position + movement, 1.0)
+	#target.position = lerp(target.position, target.position + movement, 0.2)
 	
-	
-	$GridMap/CharacterBody3D.velocity = movement
-	
-	$GridMap/CharacterBody3D.move_and_slide()
 	pass
 ###
  ### idenya adalah
@@ -84,7 +84,15 @@ func move_character(idx)->void :
 func _process(delta):
 	pass
 
+func reset() :
+	$CharacterBody3D.position = Vector3(0, 0,-3)
+	pass
 
 func _on_timer_timeout():
 	spawn_instance()
+	pass # Replace with function body.
+
+
+func _on_character_body_3d_body_entered(body: Node3D) -> void:
+	print(body)
 	pass # Replace with function body.

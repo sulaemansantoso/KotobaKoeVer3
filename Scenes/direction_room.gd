@@ -11,19 +11,16 @@ var guess_right : int = 0
 var is_normal :bool = true
 
 
-func spawn_target() :
-	
-	pass
-
 func update_info(idx) :
 	$info_viweport.get_scene_instance().set_info(json_value[idx]["English"], json_value[idx]["Japanese"] + " " + json_value[idx]["Romaji"])
 	#json_value[idx]
+	$info_viweport.get_scene_instance().connect("guess_right", guess_right_handler)
 	pass
 
 func _ready():
 	#load info from json file into an array of object
 	var json_string =  FileAccess.get_file_as_string(json_file)
-	print(json_string)
+	
 	json_value = JSON.parse_string(json_string)
 	var val2 : int = 0
 	for board in $LearningBoard.get_children():
@@ -66,7 +63,7 @@ func _on_training_direction_board_got_score():
 		#randomize board
 		var idx_array = [0,1,2,3,4,5,6,7]
 		idx_array.shuffle()
-		print(idx_array)
+	
 		var val :int = 0
 		for board in $TypingBoard.get_children() :
 			if (board.has_method("change_idx")):
@@ -87,5 +84,15 @@ func _on_training_direction_board_got_score():
 						else :
 							board.active = true
 							board.hide_button_color(false)
+					pass
 				val = val +1
 	pass # Replace with function body.
+
+
+func _on_tapable_button_button_pressed() -> void:
+	$TrainingDirectionBoard.reset()
+	pass # Replace with function body.
+	
+func guess_right_handler() :
+	$ConfirmSound.play()
+	pass
